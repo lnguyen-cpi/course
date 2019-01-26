@@ -87,11 +87,11 @@ You may need to configure your Docker installation to share local drives, depend
 - **Windows (Docker Toolbox)**: be aware that you can only share data within `C:\Users` by default. If the `C:\Users` directory is inconvenient for you, there are [workarounds](http://support.divio.com/local-development/docker/how-to-use-a-directory-outside-cusers-with-docker-toolbox-on-windowsdocker-for-windows) you can try at your own risk. **Also:** the pathname you will need to use in the `docker run -v` command will start with `//c/Users/`. Note the leading double-forward-slash, which is different than Docker for Windows!
 
 ### Mounting your shared drive
-Your homework files should live on your machine, *not within a Docker container directory!*. To expose a directory from your machine's filesystem to your docker container, you will `docker run` with the `-v` flag as follows:
+If you have not exited the docker container, do so now (just type in `exit`). Your homework files should live on your machine, *not within a Docker container directory!*. To expose a directory from your machine's filesystem to your docker container, you will `docker run` with the `-v` flag as follows:
 
     docker run -v <pathname-to-directory-on-your-machine>:/cs186 -it cs186/environment bash
 
-(Remember if you're running Docker Toolbox on Windows, `<pathname-to-directory-on-your-machine>` should start with `//c/Users/`.) 
+(Remember if you're running Docker Toolbox on Windows, `<pathname-to-directory-on-your-machine>` should start with `//c/Users/`) 
 
 This mounts your chosen directory to appear under docker at /cs186. When you get a prompt from docker, simply `cd` to that directory and you should see your local files. 
 
